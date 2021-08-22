@@ -148,6 +148,7 @@ def sendEmail(to, content):
 
 # Games
 # 1
+'''
 def the_pong_game():
     scr = turtle.Screen()
     scr.setup(width=900, height=750)
@@ -285,7 +286,7 @@ def the_pong_game():
         elif ball.xcor() > 340 and ball.ycor() < r_paddle.ycor() + 50 and ball.ycor() > r_paddle.ycor() - 50:
             ball.dx *= -1
 
-
+'''
 # 2
 def the_snake_game():
     delay = 0.1
