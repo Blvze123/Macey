@@ -90,7 +90,7 @@ import webbrowser
 import os
 import smtplib
 import turtle
-import time
+
 import random
 
 engine = pyttsx3.init('sapi5')
@@ -122,7 +122,7 @@ def takeCommand():
 
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Listening...")
+        print("...")
         r.pause_threshold = 1
         audio = r.listen(source)
 
@@ -285,8 +285,8 @@ def the_pong_game():
 
         elif ball.xcor() > 340 and ball.ycor() < r_paddle.ycor() + 50 and ball.ycor() > r_paddle.ycor() - 50:
             ball.dx *= -1
-
 '''
+
 # 2
 def the_snake_game():
     delay = 0.1
@@ -440,7 +440,8 @@ def the_snake_game():
 
 if __name__ == "__main__":
     wishMe()
-    while True:
+    Activate = True
+    while Activate:
         query = takeCommand().lower()
 
         # Logic for executing tasks based on query
@@ -529,8 +530,10 @@ if __name__ == "__main__":
         #    print(songs)
         #    os.startfile(os.path.join(music_dir, songs[0]))
 
-        elif 'bye bye' in query:
-            exit()
+        elif 'close' in query:
+            Activate = False
+            quit()
+           
 
         # Play Games
 
@@ -594,3 +597,7 @@ if __name__ == "__main__":
             b = file.read()
             file.close()
             speak(b)
+        elif 'kill' in query:
+            Activate = False
+            quit()
+
